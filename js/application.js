@@ -32,13 +32,13 @@ $(document).ready(function () {
   });
 
   var timeout;
-  $('tr input').on('input', 'tr input', function () {
+  $('tbody').on('input', '.quantity input', function () {
     clearTimeout(timeout);
     timeout = setTimeout(function () {
       updateTotal();
     }, 100);
   });
-
+  
   $('#addItem').on('submit', function (event) {
     event.preventDefault();
     var item = $(this).children('[name=item]').val();
@@ -57,7 +57,7 @@ $(document).ready(function () {
 
     updateTotal();
     $(this).children('[name=item]').val('');
-    $(this).children('[name=[pricePerUnit]]').val('');
+    $(this).children('[name="pricePerUnit"]').val('');
     $(this).children('[name=quantity]').val('');
 });
 
