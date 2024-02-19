@@ -3,11 +3,10 @@ var updateItemPrice = function (ele) {
   var quantityInput = $(ele).find('.quantity input');
   var quantity = parseFloat($(ele).find('.quantity input').val());
 
-  if (isNaN(quantity) || quantity === '') {
+  if (isNaN(quantity) || quantity === "") {
     quantity = 0;
-    quantityInput.val(0);
   }
-
+  
   var itemPrice = pricePerUnit * quantity;
   $(ele).children('.itemPrice').html(itemPrice);
 
